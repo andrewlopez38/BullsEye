@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        startNewRound()
+        startNewGame()
 }
     func updateLabels() {
         targetLabel.text = String(targetValue)
@@ -33,28 +33,52 @@ class ViewController: UIViewController {
         slider.value = Float(currentValue)
         updateLabels()
     }
-    
-    //line 29 is outlet delcaration to Hit Me button
+   
+    func startNewGame() {
+      score = 0
+      round = 0
+      startNewRound()
+    }
+
+    //line below is outlet delcaration to Hit Me button
     @IBAction func showAlert() {
         let difference = abs(targetValue-currentValue)
-        let points = 100 - difference
+        var points = 100 - difference
+       
+          let title: String
+          if difference == 0 {
+            title = "Perfect!"
+            points += 100
+          } else if difference < 5 {
+            title = "You almost had it!"
+            if difference == 1 {
+                points += 50
+            }
+          } else if difference < 10 {
+            title = "Pretty good!"
+          } else {
+            title = "Not even close...."
+          }
         score += points
         let message = "You scored \(points) points"
     
           let alert = UIAlertController(
-            title: "Hello, World",
+            title: title,
             message: message,
             preferredStyle: .alert)
 
           let action = UIAlertAction(
             title: "OK",
-            style: .default,
-            handler: nil)
+            //closure is written outside method = syntactic sugar
+            style: .default) { _ in
+                self.startNewRound()
+            //trailing closure with handler could be entered here. use preference
+            }
 
           alert.addAction(action)
 
           present(alert, animated: true, completion: nil)
-        startNewRound()
+     
         
     }
     
