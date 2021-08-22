@@ -113,6 +113,8 @@ class ViewController: UIViewController {
     @IBAction func sliderMoved(_ slider: UISlider) {
         currentValue = lroundf(slider.value)
         
+        //last update
+        
     }
 
  }
