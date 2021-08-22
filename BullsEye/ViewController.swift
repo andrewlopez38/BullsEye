@@ -89,7 +89,7 @@ class ViewController: UIViewController {
     //parameter is inside parentheses following method
     @IBAction func sliderMoved(_ slider: UISlider) {
         currentValue = lroundf(slider.value)
-        
+        //final update
     }
 
  }
