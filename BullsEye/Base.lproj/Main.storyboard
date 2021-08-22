@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="999999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="99w-sF-C6i">
-                                <rect key="frame" x="234" y="324" width="63" height="21"/>
+                                <rect key="frame" x="234" y="320" width="63" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -101,6 +101,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="roundLabel" destination="idP-8i-zKD" id="twb-NV-eZb"/>
+                        <outlet property="scoreLabel" destination="99w-sF-C6i" id="E1l-JJ-nJI"/>
                         <outlet property="slider" destination="yaJ-6i-Ki0" id="9bb-bc-ejg"/>
                         <outlet property="targetLabel" destination="Nee-1L-Ubf" id="UyE-ay-AhE"/>
                     </connections>
